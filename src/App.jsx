@@ -22,16 +22,20 @@ function App() {
     <div>
       <Nav onSearchBarClick={openModal} />
       {modalVisible && <SearchModal onClose={closeModal} onSearch={hadleSearchResults} />}
+      
+      <h1>Stays in Finland</h1>
 
-      {searchResults.length > 0 ? (
-            searchResults.map(stay => (
-                <Card key={stay.title} stay={stay} />
-            ))
-        ) : (
-            stays.map(stay => (
-                <Card key={stay.title} stay={stay} />
-            ))
-        )}
+      <div className="cards-container">
+        {searchResults.length > 0 ? (
+              searchResults.map(stay => (
+                  <Card key={stay.title} stay={stay} />
+              ))
+          ) : (
+              stays.map(stay => (
+                  <Card key={stay.title} stay={stay} />
+              ))
+          )}
+      </div>
     </div>
   );
 }

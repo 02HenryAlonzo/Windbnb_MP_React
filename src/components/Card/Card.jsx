@@ -6,7 +6,7 @@ export const Card = ({ stay }) => {
         <div className="card">
             <img src={stay.photo} alt={stay.title} />
 
-            <div>
+            <div className="card-content">
                 {stay.superHost && <span className="superhost">Superhost</span>}
                 <h2>{stay.title}</h2>
                 <p>Type: {stay.type}</p>
