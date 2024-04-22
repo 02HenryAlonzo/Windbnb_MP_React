@@ -52,8 +52,9 @@ export const SearchModal = ({ onClose, onSearch, }) => {
     }
 
     const hadleSearch = () => {
+        const locationCity = location.split(',')[0].trim()
         const filteredStays = staysData.filter(stay => {
-            const cityMatch = stay.city.toLowerCase() === location.toLowerCase()
+            const cityMatch = stay.city.toLowerCase() === locationCity.toLowerCase()
             const guestsMatch = stay.maxGuests >= adults + children
             return cityMatch && guestsMatch
         })
